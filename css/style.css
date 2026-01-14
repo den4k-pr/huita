@@ -533,6 +533,24 @@
 
 .section-3-baners-item-img {
     max-height: 115px;
+    position: relative;
+}
+
+.section-3-baners-item-img-plus{
+    font-size: 33px;
+    margin: -25px auto 0 auto;
+    position: relative;
+    z-index: 99;
+    line-height: 38px;
+    font-family: 'SONGER Condensed';
+    font-weight: 200;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 0 0 14px 0 rgba(255, 255, 255, 0.25);
+    background: linear-gradient(180deg, #b23920 0%, #160503 100%);
+    transition: .3s;
 }
 
 .section-3-baners-item-title {
@@ -881,6 +899,13 @@
     border-top: 1px solid #7b7b7b;
 }
 
+.section-3-baners-item{
+    transition: background-color 0.3s ease;
+}
+
+.banner-item{
+    cursor: pointer;
+}
 .asksContainer-item {
     border-bottom: 1px solid #7b7b7b;
     width: 100%;
@@ -897,7 +922,18 @@
     transition: all 0.4s;
 }
 
+.banner-bottom{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
 .asksContainer-item.active .asksContainer-item-bottom {
+    opacity: 1;
+}
+
+.section-3-baners-item.active .banner-bottom {
     opacity: 1;
 }
 

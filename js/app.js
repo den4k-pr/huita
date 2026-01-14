@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".asksContainer-item");
-
+  
   items.forEach((item) => {
     const top = item.querySelector(".asksContainer-item-top");
     const bottom = item.querySelector(".asksContainer-item-bottom");
@@ -26,6 +26,41 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const baners = document.querySelectorAll(".section-3-baners-item");
+
+  baners.forEach((item) => {
+    const top = item.querySelector(".banner-item");
+    const bottom = item.querySelector(".banner-bottom");
+    const label = item.querySelector(".section-3-baners-item-img-plus");
+
+    if (!top || !bottom || !label) return; // null-перевірка
+
+    bottom.style.maxHeight = "0";
+    bottom.style.overflow = "hidden";
+    bottom.style.transition = "max-height 0.4s ease";
+
+    top.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      baners.forEach((el) => {
+        const elBottom = el.querySelector(".banner-bottom");
+        const elLabel = el.querySelector(".section-3-baners-item-img-plus");
+        if (!elBottom || !elLabel) return;
+
+        el.classList.remove("active");
+        elBottom.style.maxHeight = "0";
+        elLabel.style.transform = "rotate(90deg)";
+      });
+
+      if (!isActive) {
+        item.classList.add("active");
+        bottom.style.maxHeight = bottom.scrollHeight + "px";
+        label.style.transform = "rotate(45deg)";
+      }
+    });
+  });
+
 
   function startConcrete24hTimer(timerSelector, valueSelector, storageKey) {
     const timer = document.querySelector(timerSelector);
