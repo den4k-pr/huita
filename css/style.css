@@ -121,7 +121,10 @@
     box-shadow: 0 0 400px 150px #ff000065;
 }
 
-.kris {}
+.kris {
+    position: relative;
+    z-index: 99;
+}
 
 .shines {
     position: absolute;
@@ -212,8 +215,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index: 99;
     align-items: center;
-    margin: 0 auto;
+    margin: -60px auto 0 auto;
 }
 
 .priceBlock-top {
