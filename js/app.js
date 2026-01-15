@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         el.classList.remove("active");
         elBottom.style.maxHeight = "0";
-        elLabel.style.transform = "rotate(90deg)";
+        elLabel.style.transform = "rotate(0deg)";
       });
 
       if (!isActive) {
